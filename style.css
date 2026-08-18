@@ -463,4 +463,77 @@ footer {
     .menu-card {
         padding: 25px;
     }
+}/* Addis Table About Section */
+
+#about {
+    padding: 100px 20px;
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-content h2 {
+    font-size: 44px;
+    line-height: 1.2;
+    margin: 15px 0 25px;
+}
+
+.about-content p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.about-content .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.about-highlights {
+    display: grid;
+    gap: 20px;
+}
+
+.highlight {
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.highlight h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.highlight p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Mobile About */
+
+@media (max-width: 768px) {
+
+    #about {
+        padding: 70px 20px;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-content h2 {
+        font-size: 34px;
+    }
 }
