@@ -1,1 +1,18 @@
-console.log("Addis Table website loaded successfully!");
+document.addEventListener("DOMContentLoaded", function () {
+
+    console.log("Addis Table website loaded successfully!");
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector("nav ul");
+
+    if (menuToggle && navMenu) {
+
+        menuToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
+        });
+
+    } else {
+        console.log("Mobile navigation elements not found.");
+    }
+
+});

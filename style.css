@@ -1,4 +1,46 @@
+*:root {
+    --espresso: #241714;
+    --terracotta: #9A4E2D;
+    --gold: #C49A52;
+    --ivory: #FAF6EF;
+    --sand: #E9DDCC;
+    --charcoal: #302824;
+    --white: #FFFFFF;
+    --heading-font: "Playfair Display", Georgia, serif;
+--body-font: "DM Sans", Arial, sans-serif;
+}
+}
 * {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--dark);
+}
+
+a {
+    color: inherit;
+}
+
+::selection {
+    background: var(--accent);
+    color: var(--white);
+}
+ {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -719,5 +761,270 @@ footer {
     .footer-bottom {
         flex-direction: column;
         text-align: center;
+    }
+}function sendReservation(event) {
+    event.preventDefault();
+
+    const form = event.target;
+
+    const name = form.querySelector('input[type="text"]').value;
+    const phone = form.querySelector('input[type="tel"]').value;
+    const date = form.querySelector('input[type="date"]').value;
+    const time = form.querySelector('input[type="time"]').value;
+    const guests = form.querySelector('select').value;
+    const requests = form.querySelector('textarea').value;
+
+    const message =
+        `Hello Addis Table!%0A%0A` +
+        `I'd like to request a reservation.%0A%0A` +
+        `Name: ${encodeURIComponent(name)}%0A` +
+        `Phone: ${encodeURIComponent(phone)}%0A` +
+        `Date: ${encodeURIComponent(date)}%0A` +
+        `Time: ${encodeURIComponent(time)}%0A` +
+        `Guests: ${encodeURIComponent(guests)}%0A` +
+        `Special requests: ${encodeURIComponent(requests)}`;
+
+    const restaurantNumber = "251900000000";
+
+    window.open(
+        `https://wa.me/${restaurantNumber}?text=${message}`,
+        "_blank"
+    );
+}/* ADDIS TABLE — FINAL BRAND SYSTEM */
+
+body {
+    background: var(--ivory);
+    color: var(--charcoal);
+}
+
+/* Navigation */
+
+header {
+    background: var(--espresso);
+    color: var(--white);
+}
+
+nav a {
+    color: var(--white);
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.nav-reserve {
+    background: var(--gold);
+    color: var(--espresso) !important;
+}
+
+.nav-reserve:hover {
+    background: var(--white);
+}
+
+/* Hero */
+
+.hero {
+    background: var(--ivory);
+}
+
+.hero h1,
+.hero h2 {
+    color: var(--espresso);
+}
+
+.hero-label,
+.section-label {
+    color: var(--terracotta);
+}
+
+/* Buttons */
+
+.btn,
+.hero-buttons .btn {
+    background: var(--terracotta);
+    color: var(--white);
+    border-color: var(--terracotta);
+}
+
+.btn:hover,
+.hero-buttons .btn:hover {
+    background: var(--espresso);
+    border-color: var(--espresso);
+}
+
+.hero-buttons .btn-outline {
+    background: transparent;
+    color: var(--terracotta);
+    border-color: var(--terracotta);
+}
+
+.hero-buttons .btn-outline:hover {
+    background: var(--terracotta);
+    color: var(--white);
+}
+
+/* Menu */
+
+.menu-card {
+    background: var(--white);
+    border: 1px solid var(--sand);
+    box-shadow: 0 10px 30px rgba(36, 23, 20, 0.07);
+}
+
+.menu-category {
+    color: var(--terracotta);
+}
+
+.price {
+    color: var(--espresso);
+}
+
+/* About */
+
+.highlight {
+    background: var(--white);
+    border-left: 4px solid var(--gold);
+}
+
+/* Contact */
+
+.contact-item {
+    background: var(--white);
+    border: 1px solid var(--sand);
+}
+
+.reservation-form input,
+.reservation-form select,
+.reservation-form textarea {
+    background: var(--white);
+    color: var(--charcoal);
+    border: 1px solid var(--sand);
+}
+
+.reservation-form input:focus,
+.reservation-form select:focus,
+.reservation-form textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px rgba(196, 154, 82, 0.15);
+}
+
+/* Footer */
+
+.site-footer {
+    background: var(--espresso);
+    color: var(--white);
+}
+
+.site-footer h2,
+.site-footer h3 {
+    color: var(--white);
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    border-color: rgba(255, 255, 255, 0.15);
+}/* Addis Table Typography */
+
+body {
+    font-family: var(--body-font);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+nav,
+button,
+.btn,
+.nav-reserve {
+    font-family: var(--body-font);
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1.08;
+}
+
+.section-heading h2,
+.about-content h2,
+.contact-intro h2 {
+    font-size: clamp(36px, 5vw, 52px);
+    line-height: 1.15;
+}
+
+.hero-description,
+.section-heading > p,
+.about-content p,
+.contact-intro > p {
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.menu-card h3 {
+    font-size: 25px;
+}
+
+.menu-card p {
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.section-label,
+.hero-label,
+.menu-category {
+    font-family: var(--body-font);
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}/* Mobile Navigation */
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--white);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    nav {
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    nav ul {
+        display: none;
+        width: 100%;
+        padding: 20px 0;
+        margin: 0;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav li {
+        list-style: none;
+    }
+
+    .nav-reserve {
+        display: inline-block;
     }
 }
