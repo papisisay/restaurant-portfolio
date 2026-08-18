@@ -991,8 +991,9 @@ button,
     background: transparent;
     border: none;
     color: var(--white);
-    font-size: 28px;
+    font-size: 30px;
     cursor: pointer;
+    padding: 5px;
 }
 
 @media (max-width: 768px) {
@@ -1007,21 +1008,26 @@ button,
     }
 
     nav ul {
-        display: none;
+        display: none !important;
         width: 100%;
+        margin: 20px 0 0;
         padding: 20px 0;
-        margin: 0;
         flex-direction: column;
-        gap: 15px;
-        text-align: center;
+        align-items: center;
+        gap: 18px;
+        list-style: none;
     }
 
     nav ul.active {
-        display: flex;
+        display: flex !important;
     }
 
-    nav li {
+    nav ul li {
         list-style: none;
+    }
+
+    nav ul li a {
+        display: block;
     }
 
     .nav-reserve {
